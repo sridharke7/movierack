@@ -32,6 +32,21 @@ Here are the list of things to prepare your development machine for setting up t
            • Spring boot starter
            • any IDE like IntelliJ/STS/Eclipse
 
+<h3 align="Left">Assumptions:</h3>
+
+- Chosen Java SpringBoot for API development as it gives flexibility and faster development capabilities.
+- Chosen mysql as database and used Workbench v8.0.
+- Model first approach is chosen for development.
+- Add Movie and Add user has to be the first calls made to insert user and a movie to the database. This forms the basis for making other calls to the API.
+- MovieID and UserID  are automatically assigned by auto increments while inserting to the table. Ideally, these details would be sent to the user as an email after registration.
+- Inorder to search a movie/user  by ID,  get ID by peeking into the database.
+- Database would have 3 tables namely user, movie and user_favorites. user_favorites has many to many relationship between user and movie.
+- GetMovieByTitle needs an exact movie title to return a result.
+- GetMovieTitleWith needs a substring from a movie name to search and list all the movie having substring as a part of its title.
+    for ex: search string "inc" searches and lists both Incredibles and Inception
+- GetFavorites/Id lists a users favorites movie and its details along with user details.
+
+
 <h3 align="Left">Installation</h3>
 
 	1. Clone the repo
@@ -43,19 +58,19 @@ Here are the list of things to prepare your development machine for setting up t
 <h3 align="Left">How to use?</h3>
 Once local environment is prepared, repository is cloned and built without errors in local machine, it automatically creates necessary tables in mysql database. This is because of model first approach followed in this project.
 
-API End Points                     | Details
----------------------------------- | --------------------------------------------------
-/api/addMovie                      | Expands Movie Racks collection by adding a movieid
-/api/GetMovieByGenre/{genre}       | Find movies by genre 
-/api/GetMovieByTitle/{title}       | Find a movie by Title
-/api/GetMovies                     | Shows movies on execute
-/api/GetMoviesById/{movieid}       | find a movie by id
-/api/GetMovieTitleWith/{title}     | Find movies with a search keyword
-/api/addUser                       | Add an user to Movie Rack
-/api/favorite/{userid}/movies/{id} | Like a Movie
-/api/GetFavorites/{id}             | Find favorite movies of an user
-/api/GetUser                       | Find users
-/api/GetUserById/{id}              | Find a user by id
+Type  | API End Points                     | Details
+------|----------------------------------  | --------------------------------------------------
+Post  | /api/addMovie                      | Expands Movie Racks collection by adding a movieid
+Get   | /api/GetMovieByGenre/{genre}       | Find movies by genre 
+Get   | /api/GetMovieByTitle/{title}       | Find a movie by Title
+Get   | /api/GetMovies                     | Shows movies on execute
+Get   | /api/GetMoviesById/{movieid}       | find a movie by id
+Get   | /api/GetMovieTitleWith/{title}     | Find movies with a search keyword
+Post  | /api/addUser                       | Add an user to Movie Rack
+Put   | /api/favorite/{userid}/movies/{id} | Like a Movie
+Get   | /api/GetFavorites/{id}             | Find favorite movies of an user
+Get   | /api/GetUser                       | Find users
+Get   | /api/GetUserById/{id}              | Find a user by id
 
 Swagger API for Movie Rack is accessible through the link 
 
