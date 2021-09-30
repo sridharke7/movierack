@@ -4,6 +4,13 @@
 MovieRack api is a REST api that is a centralized repository of movies. It has popular movie titles with their description, genre and number of users favorited a movie. 
 Movie Rack is growing both in its movie collection and user base.
 
+This API supports
+
+		A) getting a list of movies filterable by a query and
+		B) details for a specific movie.
+		C) favorite a specific movie.
+		D) get a list of favorited movies.
+
 <h3 align="Left">Technologies</h3>
 Movie Rack is built with popular technologies
 
@@ -35,6 +42,20 @@ Here are the list of things to prepare your development machine for setting up t
   
 <h3 align="Left">How to use?</h3>
 Once local environment is prepared, repository is cloned and built without errors in local machine, it automatically creates necessary tables in mysql database. This is because of model first approach followed in this project.
+
+API End Points                     | Details
+---------------------------------- | --------------------------------------------------
+/api/addMovie                      | Expands Movie Racks collection by adding a movieid
+/api/GetMovieByGenre/{genre}       | Find movies by genre 
+/api/GetMovieByTitle/{title}       | Find a movie by Title
+/api/GetMovies                     | Shows movies on execute
+/api/GetMoviesById/{movieid}       | find a movie by id
+/api/GetMovieTitleWith/{title}     | Find movies with a search keyword
+/api/addUser                       | Add an user to Movie Rack
+/api/favorite/{userid}/movies/{id} | Like a Movie
+/api/GetFavorites/{id}             | Find favorite movies of an user
+/api/GetUser                       | Find users
+/api/GetUserById/{id}              | Find a user by id
 
 Swagger API for Movie Rack is accessible through the link 
 
