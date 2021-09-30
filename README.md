@@ -72,11 +72,11 @@ Get   | /api/GetFavorites/{id}             | Find favorite movies of an user
 Get   | /api/GetUser                       | Find users
 Get   | /api/GetUserById/{id}              | Find a user by id
 
-Swagger API for Movie Rack is accessible through the link 
+Swagger UI for Movie Rack is accessible through the link 
 
 <http://localhost:8085/swagger-ui.html>
 
-Api Documentation through PostMan- 
+Api Documentation- 
 
 <http://localhost:8085/v2/api-docs>
 
